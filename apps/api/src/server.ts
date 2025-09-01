@@ -35,6 +35,7 @@ import { cacheWarmer } from './cache/cache-warmer.js';
 import { cacheInvalidator } from './cache/cache-invalidator.js';
 import { tracingMiddleware, userContextMiddleware, databaseContextMiddleware } from './tracing/index.js';
 import { startScheduleManager } from './scheduling/schedule-manager.js';
+import { exporterSuccess } from './metrics.js';
 import { metricsMiddleware, registry } from './metrics.js';
 
 const app = new Hono();
@@ -523,6 +524,8 @@ app.post('/export/csv', async (c) => {
       'Content-Disposition': `attachment; filename="${filename || 'export'}.csv"`,
     },
   });
+  // Mark as success for metrics
+  try { exporterSuccess.labels('csv').inc(); } catch {}
 });
 
 // ETL status streaming via SSE

@@ -1,0 +1,53 @@
+groups:
+  - name: elev8-api-latency
+    rules:
+      - alert: Elev8HighLatencyP95Cached
+        expr: |
+          histogram_quantile(0.95, sum(rate(elev8_http_request_duration_seconds_bucket{path!~".*/metrics|/health"}[5m])) by (le, path)) > 0.4
+        for: 10m
+        labels:
+          severity: warning
+          service: elev8-api
+        annotations:
+          summary: "High p95 latency for cached endpoints"
+          description: "p95 latency > 0.4s on {{ $labels.path }} for 10m"
+
+      - alert: Elev8HighLatencyP95Direct
+        expr: |
+          histogram_quantile(0.95, sum(rate(elev8_http_request_duration_seconds_bucket{path!~".*/metrics|/health"}[5m])) by (le, path)) > 2
+        for: 10m
+        labels:
+          severity: critical
+          service: elev8-api
+        annotations:
+          summary: "High p95 latency for direct query endpoints"
+          description: "p95 latency > 2s on {{ $labels.path }} for 10m"
+
+  - name: elev8-export-reliability
+    rules:
+      - alert: Elev8ExportFailureRateWarning
+        expr: |
+          (sum(rate(elev8_export_failure_total[15m]))
+            /
+           clamp_min(sum(rate(elev8_export_success_total[15m])) + sum(rate(elev8_export_failure_total[15m])), 1)) > 0.02
+        for: 15m
+        labels:
+          severity: warning
+          service: elev8-api
+        annotations:
+          summary: "Elev8 export failure rate > 2%"
+          description: "Export failure ratio > 2% over 15 minutes"
+
+      - alert: Elev8ExportFailureRateCritical
+        expr: |
+          (sum(rate(elev8_export_failure_total[15m]))
+            /
+           clamp_min(sum(rate(elev8_export_success_total[15m])) + sum(rate(elev8_export_failure_total[15m])), 1)) > 0.05
+        for: 10m
+        labels:
+          severity: critical
+          service: elev8-api
+        annotations:
+          summary: "Elev8 export failure rate > 5%"
+          description: "Export failure ratio > 5% over 10 minutes"
+

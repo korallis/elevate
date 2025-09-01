@@ -126,12 +126,14 @@ app.post(
           });
         }
 
+        exporterSuccess.labels('pdf').inc();
         c.header('Content-Type', result.contentType);
         c.header('Content-Disposition', `attachment; filename="${result.filename}"`);
         return c.body(result.buffer);
       }
     } catch (error) {
       console.error('PDF export error:', error);
+      exporterFailure.labels('pdf').inc();
       return c.json({ error: 'PDF export failed', details: (error as Error).message }, 500);
     }
   }
@@ -248,12 +250,14 @@ app.post(
           });
         }
 
+        exporterSuccess.labels('png').inc();
         c.header('Content-Type', result.contentType);
         c.header('Content-Disposition', `attachment; filename="${result.filename}"`);
         return c.body(result.buffer);
       }
     } catch (error) {
       console.error('PNG export error:', error);
+      exporterFailure.labels('png').inc();
       return c.json({ error: 'PNG export failed', details: (error as Error).message }, 500);
     }
   }
