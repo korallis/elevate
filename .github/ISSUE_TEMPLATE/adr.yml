@@ -1,0 +1,40 @@
+name: "ADR: Architecture Decision"
+description: "Propose an Architecture Decision Record (ADR)"
+title: "ADR: <short title>"
+labels: ["adr"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to propose a new ADR. Once accepted, commit it under `docs/adr/` using the next sequential number.
+  - type: input
+    id: context
+    attributes:
+      label: Context
+      description: Why is this decision needed? Constraints and goals.
+      placeholder: e.g., Need a governed semantic layer for metrics consistency
+    validations:
+      required: true
+  - type: textarea
+    id: decision
+    attributes:
+      label: Decision
+      description: What is being decided and why?
+    validations:
+      required: true
+  - type: textarea
+    id: consequences
+    attributes:
+      label: Consequences
+      description: Positive/negative outcomes and trade‑offs.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Other options evaluated and why they were rejected.
+  - type: textarea
+    id: followups
+    attributes:
+      label: Follow‑ups / Open Questions
+      description: Tasks or questions that remain after this ADR.
+
