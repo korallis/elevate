@@ -1,17 +1,18 @@
-## Summary
+# Summary
+Closes #<issue-number>
 
-Describe the change and link related issues.
+Automerge: yes  <!-- change to 'no' if you don't want auto-merge -->
+
+## Acceptance Criteria
+<!-- Copy from the linked issue and tick only when done. -->
+- [ ] …
+
+## Tests
+- [ ] Unit tests added/updated
+- [ ] E2E (Playwright) if applicable
 
 ## Checklist
-
-- [ ] Story has clear acceptance criteria
-- [ ] Docs updated (if applicable)
-- [ ] ADR referenced/updated (if applicable)
-- [ ] Tests or validation plan included (if applicable)
-
-## Notes
-
-- Impact on security/tenancy/governance:
-- Performance considerations:
-- Rollback plan:
-
+- [ ] Conventional Commit title
+- [ ] All acceptance criteria ticked
+- [ ] Docs/ADRs updated if needed
+- [ ] Requested review from CODEOWNERS

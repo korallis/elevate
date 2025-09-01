@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+# Block committing .env files (allow .env.example)
+env_leaks=$(git diff --cached --name-only | grep -E '(^\.env$|(^|/)\.env(\.|$))' | grep -vE '^\.env\.example$' || true)
+if [ -n "$env_leaks" ]; then
+  echo "❌ Aborting: .env files must not be committed: $env_leaks"
+  exit 1
+fi
+# Basic secret patterns (skip .env.example, hooks, tools)
+PATTERNS='SNOWFLAKE_PASSWORD|SNOWFLAKE_PRIVATE_KEY|PGPASSWORD|DATABASE_URL=postgres://[^ ]+:[^ ]+@|REDIS_URL=redis://[^ ]+:[^ ]+@'
+staged=$(git diff --cached --name-only || true)
+filtered=$(echo "$staged" | grep -vE '^\.env\.example$|^\.githooks/|^tools/' || true)
+if [ -n "$filtered" ]; then
+  # shellcheck disable=SC2086
+  if git diff --cached -U0 -- $filtered | grep -E "$PATTERNS" >/dev/null; then
+    echo "❌ Aborting: potential secrets detected in staged changes."
+    exit 1
+  fi
+fi
