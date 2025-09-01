@@ -1,0 +1,18 @@
+GET http://localhost:3001/health
+
+### Metrics endpoint (prometheus exposition format)
+GET http://localhost:3001/metrics
+
+### XLSX export (manual verification)
+POST http://localhost:3001/export/xlsx
+Content-Type: application/json
+
+{
+  "fields": ["id", "name", "amount", "created_at", "active"],
+  "rows": [
+    {"id": 1, "name": "Alpha", "amount": 123.45, "created_at": "2024-01-01", "active": true},
+    {"id": 2, "name": "Beta", "amount": 67.89, "created_at": "2024-02-15", "active": false}
+  ],
+  "filename": "sample-export",
+  "sheetName": "Data"
+}

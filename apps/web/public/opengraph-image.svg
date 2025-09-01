@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6A4CFF"/>
+      <stop offset="100%" stop-color="#00C896"/>
+    </linearGradient>
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#152238" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0A0A10"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g opacity="0.3">
+    <path d="M0 70h1200M0 140h1200M0 210h1200M0 280h1200M0 350h1200M0 420h1200M0 490h1200M0 560h1200" stroke="#ffffff" stroke-opacity="0.07"/>
+    <path d="M100 0v630M200 0v630M300 0v630M400 0v630M500 0v630M600 0v630M700 0v630M800 0v630M900 0v630M1000 0v630M1100 0v630" stroke="#ffffff" stroke-opacity="0.07"/>
+  </g>
+  <rect x="60" y="60" width="120" height="120" rx="28" fill="url(#g)"/>
+  <path d="M87 128c0-14 12.7-24 28.4-24h12.6c8.7 0 15.8-5.3 15.8-11.8S136.7 80 128 80H102" fill="none" stroke="#0A0A10" stroke-width="10" stroke-linecap="round"/>
+  <path d="M180 104c0 14-12.7 24-28.4 24H139c-8.7 0-15.8 5.3-15.8 11.8S130.3 152 139 152h26" fill="none" stroke="#0A0A10" stroke-width="10" stroke-linecap="round" opacity=".9"/>
+  <text x="210" y="118" fill="#E0E0E6" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="46" font-weight="700">SME Analytics</text>
+  <text x="210" y="160" fill="#A0A0A8" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="22">Elegant, ultra‑modern analytics for ambitious teams</text>
+  <rect x="210" y="210" width="780" height="260" rx="18" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="240" y="260" fill="#A0A0A8" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="18">Live Preview</text>
+  <rect x="240" y="282" width="720" height="150" rx="12" fill="#0f1626" stroke="#ffffff" stroke-opacity="0.06"/>
+  <path d="M250 392c80-30 160-100 240-60 80 40 160 0 240-10 80-10 160 20 240-10" stroke="url(#g)" stroke-width="4" fill="none"/>
+  <text x="60" y="580" fill="#A0A0A8" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="16">Snowflake‑first • Semantic layer • Catalog • NL→SQL • Dashboards</text>
+</svg>
+

@@ -1,0 +1,10 @@
+# Path: packages/ui/package.json
+
+```json
+{
+  "name": "ui",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./index.ts"
+}
+```

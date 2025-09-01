@@ -1,0 +1,166 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Browser Frame -->
+  <rect x="0" y="0" width="1200" height="800" rx="12" fill="url(#bg-gradient)" stroke="url(#border-gradient)" stroke-width="1"/>
+  
+  <!-- Top Bar -->
+  <rect x="0" y="0" width="1200" height="48" rx="12" fill="#11131A"/>
+  <circle cx="24" cy="24" r="5" fill="#DC3545"/>
+  <circle cx="44" cy="24" r="5" fill="#FFC107"/>
+  <circle cx="64" cy="24" r="5" fill="#28A745"/>
+  <rect x="100" y="16" width="300" height="16" rx="8" fill="#1A1C26"/>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="48" width="240" height="752" fill="#0F1117" opacity="0.8"/>
+  
+  <!-- Nav Items -->
+  <rect x="16" y="80" width="208" height="40" rx="8" fill="#6A4CFF" opacity="0.2"/>
+  <rect x="24" y="92" width="16" height="16" rx="4" fill="#6A4CFF"/>
+  <rect x="48" y="94" width="120" height="12" rx="6" fill="#6A4CFF" opacity="0.6"/>
+  
+  <rect x="24" y="140" width="16" height="16" rx="4" fill="#4A4D60"/>
+  <rect x="48" y="142" width="100" height="12" rx="6" fill="#4A4D60" opacity="0.4"/>
+  
+  <rect x="24" y="180" width="16" height="16" rx="4" fill="#4A4D60"/>
+  <rect x="48" y="182" width="110" height="12" rx="6" fill="#4A4D60" opacity="0.4"/>
+  
+  <rect x="24" y="220" width="16" height="16" rx="4" fill="#4A4D60"/>
+  <rect x="48" y="222" width="90" height="12" rx="6" fill="#4A4D60" opacity="0.4"/>
+  
+  <!-- Main Content Area -->
+  <rect x="240" y="48" width="960" height="752" fill="#0A0A10" opacity="0.5"/>
+  
+  <!-- Header -->
+  <text x="280" y="110" font-family="system-ui" font-size="28" font-weight="600" fill="#E6E7EC">Analytics Overview</text>
+  <text x="280" y="140" font-family="system-ui" font-size="14" fill="#A4A6B0">Real-time insights from your Snowflake warehouse</text>
+  
+  <!-- KPI Cards -->
+  <g transform="translate(280, 180)">
+    <!-- Card 1 -->
+    <rect width="200" height="120" rx="12" fill="url(#card-gradient-1)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="20" y="35" font-family="system-ui" font-size="12" fill="#A4A6B0">Monthly Revenue</text>
+    <text x="20" y="65" font-family="system-ui" font-size="32" font-weight="600" fill="#E6E7EC">$847.3K</text>
+    <text x="20" y="95" font-family="system-ui" font-size="14" fill="#00C896">↑ 23.5%</text>
+    
+    <!-- Card 2 -->
+    <rect x="220" width="200" height="120" rx="12" fill="url(#card-gradient-2)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="240" y="35" font-family="system-ui" font-size="12" fill="#A4A6B0">Active Users</text>
+    <text x="240" y="65" font-family="system-ui" font-size="32" font-weight="600" fill="#E6E7EC">12,847</text>
+    <text x="240" y="95" font-family="system-ui" font-size="14" fill="#00C896">↑ 18.2%</text>
+    
+    <!-- Card 3 -->
+    <rect x="440" width="200" height="120" rx="12" fill="url(#card-gradient-3)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="460" y="35" font-family="system-ui" font-size="12" fill="#A4A6B0">Conversion Rate</text>
+    <text x="460" y="65" font-family="system-ui" font-size="32" font-weight="600" fill="#E6E7EC">4.8%</text>
+    <text x="460" y="95" font-family="system-ui" font-size="14" fill="#FFC107">↑ 2.1%</text>
+    
+    <!-- Card 4 -->
+    <rect x="660" width="200" height="120" rx="12" fill="url(#card-gradient-4)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="680" y="35" font-family="system-ui" font-size="12" fill="#A4A6B0">Churn Rate</text>
+    <text x="680" y="65" font-family="system-ui" font-size="32" font-weight="600" fill="#E6E7EC">2.3%</text>
+    <text x="680" y="95" font-family="system-ui" font-size="14" fill="#DC3545">↓ 0.8%</text>
+  </g>
+  
+  <!-- Chart Area -->
+  <rect x="280" y="340" width="640" height="320" rx="12" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  
+  <!-- Chart Title -->
+  <text x="300" y="375" font-family="system-ui" font-size="16" font-weight="500" fill="#E6E7EC">Revenue Trend</text>
+  
+  <!-- Chart Grid -->
+  <line x1="320" y1="400" x2="880" y2="400" stroke="rgba(255,255,255,0.05)"/>
+  <line x1="320" y1="460" x2="880" y2="460" stroke="rgba(255,255,255,0.05)"/>
+  <line x1="320" y1="520" x2="880" y2="520" stroke="rgba(255,255,255,0.05)"/>
+  <line x1="320" y1="580" x2="880" y2="580" stroke="rgba(255,255,255,0.05)"/>
+  
+  <!-- Chart Line -->
+  <path d="M 320 560 Q 400 520, 480 500 T 640 480 Q 720 460, 800 420 T 880 400" 
+        stroke="url(#line-gradient)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Chart Fill -->
+  <path d="M 320 580 L 320 560 Q 400 520, 480 500 T 640 480 Q 720 460, 800 420 T 880 400 L 880 580 Z" 
+        fill="url(#area-gradient)" opacity="0.2"/>
+  
+  <!-- Data Points -->
+  <circle cx="320" cy="560" r="4" fill="#6A4CFF"/>
+  <circle cx="480" cy="500" r="4" fill="#6A4CFF"/>
+  <circle cx="640" cy="480" r="4" fill="#6A4CFF"/>
+  <circle cx="800" cy="420" r="4" fill="#6A4CFF"/>
+  <circle cx="880" cy="400" r="4" fill="#00C896"/>
+  
+  <!-- Side Panel -->
+  <rect x="940" y="340" width="220" height="320" rx="12" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="960" y="375" font-family="system-ui" font-size="16" font-weight="500" fill="#E6E7EC">Top Products</text>
+  
+  <!-- Product List -->
+  <rect x="960" y="400" width="180" height="40" rx="8" fill="rgba(106, 76, 255, 0.1)"/>
+  <rect x="970" y="410" width="20" height="20" rx="4" fill="#6A4CFF"/>
+  <text x="1000" y="425" font-family="system-ui" font-size="12" fill="#E6E7EC">Enterprise Plan</text>
+  
+  <rect x="960" y="450" width="180" height="40" rx="8" fill="rgba(0, 200, 150, 0.1)"/>
+  <rect x="970" y="460" width="20" height="20" rx="4" fill="#00C896"/>
+  <text x="1000" y="475" font-family="system-ui" font-size="12" fill="#E6E7EC">Professional</text>
+  
+  <rect x="960" y="500" width="180" height="40" rx="8" fill="rgba(255, 193, 7, 0.1)"/>
+  <rect x="970" y="510" width="20" height="20" rx="4" fill="#FFC107"/>
+  <text x="1000" y="525" font-family="system-ui" font-size="12" fill="#E6E7EC">Starter</text>
+  
+  <!-- Table Section -->
+  <rect x="280" y="680" width="880" height="100" rx="12" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="300" y="710" font-family="system-ui" font-size="14" font-weight="500" fill="#E6E7EC">Recent Transactions</text>
+  
+  <!-- Table Headers -->
+  <text x="300" y="740" font-family="system-ui" font-size="11" fill="#A4A6B0">CUSTOMER</text>
+  <text x="500" y="740" font-family="system-ui" font-size="11" fill="#A4A6B0">AMOUNT</text>
+  <text x="700" y="740" font-family="system-ui" font-size="11" fill="#A4A6B0">STATUS</text>
+  <text x="900" y="740" font-family="system-ui" font-size="11" fill="#A4A6B0">DATE</text>
+  
+  <!-- Table Row -->
+  <text x="300" y="760" font-family="system-ui" font-size="12" fill="#E6E7EC">Acme Corp</text>
+  <text x="500" y="760" font-family="system-ui" font-size="12" fill="#E6E7EC">$24,500</text>
+  <rect x="700" y="750" width="60" height="16" rx="8" fill="rgba(0, 200, 150, 0.2)"/>
+  <text x="715" y="761" font-family="system-ui" font-size="10" fill="#00C896">PAID</text>
+  <text x="900" y="760" font-family="system-ui" font-size="12" fill="#A4A6B0">Dec 15, 2024</text>
+  
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A10"/>
+      <stop offset="100%" stop-color="#11131A"/>
+    </linearGradient>
+    
+    <linearGradient id="border-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(106, 76, 255, 0.3)"/>
+      <stop offset="100%" stop-color="rgba(0, 200, 150, 0.3)"/>
+    </linearGradient>
+    
+    <linearGradient id="card-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(106, 76, 255, 0.05)"/>
+      <stop offset="100%" stop-color="rgba(106, 76, 255, 0.02)"/>
+    </linearGradient>
+    
+    <linearGradient id="card-gradient-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(0, 200, 150, 0.05)"/>
+      <stop offset="100%" stop-color="rgba(0, 200, 150, 0.02)"/>
+    </linearGradient>
+    
+    <linearGradient id="card-gradient-3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 193, 7, 0.05)"/>
+      <stop offset="100%" stop-color="rgba(255, 193, 7, 0.02)"/>
+    </linearGradient>
+    
+    <linearGradient id="card-gradient-4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(220, 53, 69, 0.05)"/>
+      <stop offset="100%" stop-color="rgba(220, 53, 69, 0.02)"/>
+    </linearGradient>
+    
+    <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6A4CFF"/>
+      <stop offset="100%" stop-color="#00C896"/>
+    </linearGradient>
+    
+    <linearGradient id="area-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6A4CFF"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+  </defs>
+</svg>

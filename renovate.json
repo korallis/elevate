@@ -1,0 +1,43 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommits",
+    ":prHourlyLimitNone",
+    ":disableRateLimiting"
+  ],
+  "platformAutomerge": false,
+  "rangeStrategy": "pin",
+  "labels": ["deps"],
+  "timezone": "UTC",
+  "schedule": ["every weekend"],
+  "packageRules": [
+    {
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": [
+        "^@types/",
+        "eslint",
+        "prettier",
+        "typescript",
+        "turbo",
+        "next",
+        "react",
+        "react-dom",
+        "tailwindcss",
+        "@tailwindcss/postcss",
+        "postcss",
+        "autoprefixer",
+        "tsx"
+      ],
+      "automerge": true,
+      "automergeType": "branch",
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "description": "Lockfile maintenance",
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "automerge": true
+    }
+  ]
+}

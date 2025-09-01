@@ -1,0 +1,16 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules
+.pnpm-store
+
+# Next.js
+.next
+out
+
+# Turbo
+.turbo
+

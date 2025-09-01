@@ -1,0 +1,29 @@
+{
+  "name": "@sme/embed-sdk",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./react": "./src/embed-container.tsx"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/react": "19.1.12",
+    "@types/react-dom": "19.1.9"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  }
+}
