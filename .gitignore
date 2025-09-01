@@ -1,0 +1,14 @@
+# Node / build
+node_modules/
+dist/
+.out/
+.next/
+coverage/
+
+# Env & local config
+.env
+.env.*
+!.env.example
+.vercel
+supabase/.temp
+

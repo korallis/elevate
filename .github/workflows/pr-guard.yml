@@ -1,0 +1,22 @@
+name: PR Gatekeeper
+on:
+  pull_request:
+    types: [opened, edited, synchronize, ready_for_review]
+permissions:
+  contents: read
+  pull-requests: read
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const title = pr.title || '';
+            const body = (pr.body || '').toString();
+            const cc = /^(feat|fix|docs|chore|refactor|test|ci)(\([^)]+\))?:\s/.test(title);
+            if (!cc) core.setFailed('Title must use Conventional Commits.');
+            if (!/Closes\s*#\d+/.test(body)) core.setFailed('PR body must contain "Closes #<issue>".');
+            if (/^- \[ \]/m.test(body)) core.setFailed('One or more acceptance criteria are unchecked.');
+

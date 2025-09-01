@@ -1,0 +1,26 @@
+name: Set Auto-merge
+on:
+  pull_request_target:
+    types: [opened, synchronize, edited, ready_for_review]
+permissions:
+  pull-requests: write
+  contents: write
+  checks: read
+  statuses: read
+jobs:
+  set:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable repo auto-merge
+        env: { GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} }
+        run: gh api -X PATCH repos/${{ github.repository }} -f allow_auto_merge=true
+      - name: Enable auto-merge for PR if requested
+        env: { GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} }
+        run: |
+          PR=${{ github.event.pull_request.number }}
+          BODY=$(gh pr view "$PR" --json body -q .body)
+          if echo "$BODY" | grep -iq "automerge:\s*yes"; then
+            gh pr merge "$PR" --squash --auto || true
+          fi
+
