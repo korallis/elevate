@@ -28,6 +28,17 @@ Base monorepo scaffold with Next.js 15, React 19, and TypeScript 5.9.
 - Sample env: `apps/web/.env.example`
 - Local env: copy to `apps/web/.env.local` and edit as needed
 
+### Auth & Database
+
+- Set `DATABASE_URL` (SQLite path) and iron-session secrets in `apps/web/.env.local`:
+  - `DATABASE_URL="file:./prisma/dev.db"`
+  - `IRON_SESSION_PASSWORD` (32+ chars)
+  - `IRON_SESSION_COOKIE_NAME` (e.g. `elevate_session`)
+- Generate Prisma client and apply schema:
+  - `pnpm --filter @sme/web db:generate`
+  - `pnpm --filter @sme/web db:push` (or `db:migrate` to create a migration)
+- Start dev server and visit `/signup`, `/login`, and protected `/dashboard`.
+
 ## Project Layout
 
 - apps/web: Next.js App Router app (15.x), strict TS, ESLint/Prettier
