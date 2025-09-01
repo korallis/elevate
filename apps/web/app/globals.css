@@ -1,2 +1,65 @@
-:root { color-scheme: light dark; }
-body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; margin: 0; }
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@theme inline {
+  /* Semantic tokens */
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+
+  --primary: 221 83% 53%; /* blue-600 */
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 262 83% 58%; /* purple-600 */
+  --secondary-foreground: 210 40% 98%;
+
+  --ring: 221 83% 53%;
+}
+
+/* Theme variants via html classes */
+:root,
+html.theme-default {
+  color-scheme: light;
+}
+
+html.theme-ocean {
+  --background: 210 40% 98%;
+  --foreground: 222 47% 11%;
+  --primary: 198 93% 60%; /* cyan-400 */
+  --secondary: 221 83% 53%; /* blue-600 */
+}
+
+html.theme-forest {
+  --background: 150 20% 96%;
+  --foreground: 160 21% 16%;
+  --primary: 142 71% 45%; /* green-500 */
+  --secondary: 173 80% 40%; /* teal-500 */
+}
+
+html.theme-sunset {
+  --background: 20 33% 98%;
+  --foreground: 24 9% 10%;
+  --primary: 14 100% 57%; /* orange-500 */
+  --secondary: 340 82% 52%; /* pink-500 */
+}
+
+/* Base element styles using tokens */
+@layer base {
+  * { @apply border-[hsl(var(--border))]; }
+  body {
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] m-0 font-sans;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+}

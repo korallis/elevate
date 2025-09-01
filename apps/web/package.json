@@ -14,7 +14,12 @@
   "dependencies": {
     "next": "^15.0.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "clsx": "^2.1.1",
+    "class-variance-authority": "^0.7.0",
+    "tailwind-merge": "^2.5.2",
+    "lucide-react": "^0.460.0",
+    "@radix-ui/react-slot": "^1.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.7.4",
@@ -23,6 +28,9 @@
     "eslint": "^9.9.0",
     "eslint-config-next": "^15.0.0",
     "prettier": "^3.3.3",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "tailwindcss": "^4.1.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "tailwindcss-animate": "^1.0.7"
   }
 }
