@@ -2,6 +2,7 @@ import './globals.css';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { ThemeToggle } from '@/components/theme-toggle';
+import AuthNav from '@/components/auth-nav';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -12,8 +13,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <nav className="flex gap-4 text-sm">
               <Link href="/" className="hover:underline">Home</Link>
               <Link href="/examples" className="hover:underline">Examples</Link>
+              <Link href="/dashboard" className="hover:underline">Dashboard</Link>
             </nav>
-            <ThemeToggle />
+            <div className="flex gap-4 items-center">
+              <ThemeToggle />
+              <AuthNav />
+            </div>
           </div>
         </header>
         <div className="mx-auto max-w-5xl px-4">{children}</div>
