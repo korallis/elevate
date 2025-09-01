@@ -1,0 +1,14 @@
+{
+  "name": "elevate",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.15.0",
+  "scripts": {
+    "dev": "pnpm --filter @sme/web dev",
+    "build": "pnpm -r run -if-present build",
+    "start": "pnpm --filter @sme/web start",
+    "lint": "pnpm -r run -if-present lint",
+    "typecheck": "pnpm -r run -if-present typecheck",
+    "test": "pnpm -r run -if-present test"
+  }
+}

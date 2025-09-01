@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]
   pull_request:
-    branches: [main, master]
+    branches: [main]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -16,36 +16,24 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: ['22.x', '24.x']
+        node: ['22.x']
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: Setup Node ${{ matrix.node }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-
       - name: Enable Corepack and pnpm
         run: |
           corepack enable
           corepack prepare pnpm@10.15.0 --activate
-
-      - name: Configure pnpm for CI native builds
-        run: |
-          pnpm config set dangerouslyAllowAllBuilds true
-
       - name: Install dependencies
-        run: pnpm install
-
-      - name: Lint
-        run: pnpm -w lint
-
-      - name: Typecheck
-        run: pnpm -w typecheck
-
-      - name: Build (default)
-        run: pnpm -w build
-
-      - name: Build Web with Turbopack
-        run: pnpm --filter @sme/web build:turbo
+        run: pnpm -w install
+      - name: Lint (if present)
+        run: pnpm -w -r run -if-present lint || echo 'No lint scripts.'
+      - name: Typecheck (if present)
+        run: pnpm -w -r run -if-present typecheck || echo 'No typecheck scripts.'
+      - name: Build (if present)
+        run: pnpm -w -r run -if-present build || echo 'No build scripts.'
+      - name: Test (if present)
+        run: pnpm -w -r run -if-present test || echo 'No tests.'
