@@ -14,6 +14,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <Link href="/" className="hover:underline">Home</Link>
               <Link href="/examples" className="hover:underline">Examples</Link>
               <Link href="/dashboard" className="hover:underline">Dashboard</Link>
+              <Link href="/admin" className="hover:underline">Admin</Link>
             </nav>
             <div className="flex gap-4 items-center">
               <ThemeToggle />
