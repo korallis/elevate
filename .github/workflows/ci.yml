@@ -12,6 +12,7 @@ concurrency:
 
 jobs:
   build:
+    if: ${{ hashFiles('package.json', 'pnpm-workspace.yaml') != '' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
